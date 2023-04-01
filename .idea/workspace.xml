@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c6dfa67c-fd8b-45ee-a537-7b36c3d9ed2e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/PD_Projekt/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PD_Projekt/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PD_Projekt/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PD_Projekt/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PD_Projekt/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PD_Projekt.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PD_Projekt.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/base/1/pg_internal.init" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/base/16398/pg_internal.init" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/base/5/pg_internal.init" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/current_logfiles" beforeDir="false" afterPath="$PROJECT_DIR$/BD/current_logfiles" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/global/pg_control" beforeDir="false" afterPath="$PROJECT_DIR$/BD/global/pg_control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/global/pg_internal.init" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/log/postgresql-2023-03-18_105244.log" beforeDir="false" afterPath="$PROJECT_DIR$/BD/log/postgresql-2023-03-18_105244.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/pg_wal/000000010000000000000001" beforeDir="false" afterPath="$PROJECT_DIR$/BD/pg_wal/000000010000000000000001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/postmaster.pid" beforeDir="false" afterPath="$PROJECT_DIR$/BD/postmaster.pid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_main.http" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NoXDMvLPMBsFytR1MrBzJaPHzA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager">
+    <configuration name="PD_Projekt" type="Python.DjangoServer" factoryName="Django server">
+      <module name="PD_Projekt" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c6dfa67c-fd8b-45ee-a537-7b36c3d9ed2e" name="Changes" comment="" />
+      <created>1680331287551</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1680331287551</updated>
+      <workItem from="1680331313734" duration="53000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

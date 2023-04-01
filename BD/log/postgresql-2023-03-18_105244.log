@@ -6,3 +6,6 @@
 2023-03-18 12:04:26.323 CET [11156] LOG:  checkpoint complete: wrote 927 buffers (5.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=101.575 s, sync=0.105 s, total=101.686 s; sync files=251, longest=0.001 s, average=0.001 s; distance=4234 kB, estimate=4234 kB
 2023-03-18 12:24:26.092 CET [21684] LOG:  could not receive data from client: unrecognized winsock error 10054
 2023-03-18 12:24:26.092 CET [22664] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-03-18 12:34:15.929 CET [11156] LOG:  shutting down
+2023-03-18 12:34:15.930 CET [11156] LOG:  checkpoint starting: shutdown immediate
+2023-03-18 12:34:15.935 CET [11156] LOG:  checkpoint complete: wrote 0 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.007 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=3811 kB
