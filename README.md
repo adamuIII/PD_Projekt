@@ -1,7 +1,7 @@
 # PD_Projekt
 Aplikacja desktopowa do zarządzania sklepem z grami komputerowymi
 
-#**Wymagania funkcjonalne:**
+# **Wymagania funkcjonalne:**
 Rejestracja użytkowników i logowanie do aplikacji.
 Dodawanie, przeglądanie, edycja i usuwanie gier w sklepie.
 Przeglądanie listy gier oraz sortowanie po kategoriach, cenach i ocenach.
@@ -9,7 +9,7 @@ Dodawanie gier do koszyka i składanie zamówień.
 Przeglądanie historii zamówień i statusu zamówienia.
 Możliwość dodawania recenzji i oceny dla gier.
 Wyszukiwanie gier po nazwie lub opisie.
-#**Wymagania niefunkcjonalne:**
+# **Wymagania niefunkcjonalne:**
 Aplikacja powinna być dostępna na systemach operacyjnych Windows, Linux i macOS.
 Aplikacja powinna działać w przeglądarkach internetowych Google Chrome, Mozilla Firefox, Microsoft Edge i Safari.
 Interfejs graficzny powinien być intuicyjny i responsywny.
