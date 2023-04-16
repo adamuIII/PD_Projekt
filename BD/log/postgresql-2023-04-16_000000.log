@@ -1,0 +1,10 @@
+2023-04-16 14:06:36.357 CEST [6660] LOG:  checkpoint starting: time
+2023-04-16 14:06:36.581 CEST [6660] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.216 s, sync=0.001 s, total=0.225 s; sync files=1, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=10 kB
+2023-04-16 14:09:56.637 CEST [10356] FATAL:  password authentication failed for user "superuser"
+2023-04-16 14:09:56.637 CEST [10356] DETAIL:  Role "superuser" does not exist.
+	Connection matched pg_hba.conf line 89: "host    all             all             ::1/128                 scram-sha-256"
+2023-04-16 14:10:00.995 CEST [19812] FATAL:  password authentication failed for user "superuser"
+2023-04-16 14:10:00.995 CEST [19812] DETAIL:  Role "superuser" does not exist.
+	Connection matched pg_hba.conf line 89: "host    all             all             ::1/128                 scram-sha-256"
+2023-04-16 14:19:14.179 CEST [26048] LOG:  could not receive data from client: unrecognized winsock error 10054
+2023-04-16 14:19:14.179 CEST [14048] LOG:  could not receive data from client: unrecognized winsock error 10054

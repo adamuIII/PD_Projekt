@@ -5,14 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c6dfa67c-fd8b-45ee-a537-7b36c3d9ed2e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PD_Projekt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/PD_Projekt/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/current_logfiles" beforeDir="false" afterPath="$PROJECT_DIR$/BD/current_logfiles" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/global/pg_control" beforeDir="false" afterPath="$PROJECT_DIR$/BD/global/pg_control" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/pg_wal/000000010000000000000001" beforeDir="false" afterPath="$PROJECT_DIR$/BD/pg_wal/000000010000000000000001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BD/postmaster.pid" beforeDir="false" afterPath="$PROJECT_DIR$/BD/postmaster.pid" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -71,7 +76,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1680331287551</updated>
-      <workItem from="1680331313734" duration="748000" />
+      <workItem from="1680331313734" duration="1379000" />
+      <workItem from="1680378732370" duration="24000" />
+      <workItem from="1680378768195" duration="622000" />
+      <workItem from="1680439593949" duration="1886000" />
+      <workItem from="1681328676943" duration="37000" />
     </task>
     <servers />
   </component>
