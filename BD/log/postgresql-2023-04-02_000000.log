@@ -1,2 +1,0 @@
-2023-04-02 18:01:58.920 CEST [8804] LOG:  could not receive data from client: unrecognized winsock error 10054
-2023-04-02 18:01:58.921 CEST [17328] LOG:  could not receive data from client: unrecognized winsock error 10054

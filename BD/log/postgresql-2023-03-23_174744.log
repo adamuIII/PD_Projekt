@@ -1,7 +1,0 @@
-2023-03-23 17:47:44.694 CET [6976] LOG:  database system was interrupted; last known up at 2023-03-22 20:54:42 CET
-2023-03-23 17:47:45.061 CET [6976] LOG:  database system was not properly shut down; automatic recovery in progress
-2023-03-23 17:47:45.064 CET [6976] LOG:  redo starts at 0/19832B8
-2023-03-23 17:47:45.065 CET [6976] LOG:  invalid record length at 0/19832F0: wanted 24, got 0
-2023-03-23 17:47:45.065 CET [6976] LOG:  redo done at 0/19832B8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
-2023-03-23 17:47:45.068 CET [6952] LOG:  checkpoint starting: end-of-recovery immediate wait
-2023-03-23 17:47:45.076 CET [6952] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.009 s; sync files=2, longest=0.001 s, average=0.001 s; distance=0 kB, estimate=0 kB

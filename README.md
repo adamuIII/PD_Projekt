@@ -1,3 +1,7 @@
+# do kazdego pieknego pana ktory bedzie cos robil przy tym projekcie
+
+musicie sobie najpierw zrobic komende python manage.py makemigrations gameshop, a potem python manage.py migrate zanim baza zacznie dzialac
+
 # PD_Projekt
 Aplikacja desktopowa do zarządzania sklepem z grami komputerowymi
 
