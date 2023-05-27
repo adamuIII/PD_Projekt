@@ -26,25 +26,15 @@
     <div class="wrapper">
       <div class="content">
         <ul >
+          {% for product in products %}
           <li>
-              <img src="{% static 'gameshop/logo.jpg' %}" alt="Product 1" class="item-image">
-              <div class="item-name">Product temp 1</div>
-              <div class="item-price">$21.37</div>
-              <div class="item-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+            <img class="item-image" src="{{ product.image.url }}" alt="{{ product.name }}" />
+            <div class="item-name">{{product.title}}</div>
+            <div class="item-price">{{product.price}}</div>
+            <div class="item-description">{{product.description}}</div>
           </li>
-          <li>
-              <img src="{% static 'gameshop/logo.jpg' %}" alt="Product 1" class="item-image">
-              <div class="item-name">Product temp 2</div>
-              <div class="item-price">$12.34</div>
-              <div class="item-description">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
-          </li>
-          <li>
-              <img src="{% static 'gameshop/logo.jpg' %}" alt="Product 1" class="item-image">
-              <div class="item-name">Product temp 3</div>
-              <div class="item-price">$39.99</div>
-              <div class="item-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</div>
-          </li>
-      </ul>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>

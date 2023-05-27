@@ -1,10 +1,12 @@
 from django.shortcuts import render
+from .models import Game
 
 def index(request):
     return render(request, "gameshop/index.html")
 
 def products(request):
-    return render(request, 'gameshop/products.html')
+    products = Game.objects.all()
+    return render(request, 'gameshop/products.html', {'products': products})
 
 def regulamin(request):
     return render(request, 'gameshop/regulamin.html')
