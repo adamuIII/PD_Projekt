@@ -13,9 +13,9 @@ def pomoc(request):
     return render(request, 'gameshop/pomoc.html')
 
 def login(request):
-    return render(request, 'gameshop/login.html')
+    return render(request, 'gameshop/authenticate/login.html')
 
 def register(request):
-    return render(request, 'gameshop/register.html')
+    return render(request, 'gameshop/authenticate/register.html')
 
 
