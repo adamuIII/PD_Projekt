@@ -9,4 +9,7 @@ def products(request):
 def regulamin(request):
     return render(request, 'gameshop/regulamin.html')
 
+def pomoc(request):
+    return render(request, 'gameshop/pomoc.html')
+
 
