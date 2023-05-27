@@ -19,8 +19,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('gameshop/', include('gameshop.urls')),
     path('admin/', admin.site.urls),
+    path('', include('gameshop.urls',namespace='gameshop')),
 ]
 
 if settings.DEBUG:

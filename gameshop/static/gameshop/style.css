@@ -72,3 +72,33 @@ nav ul li a{
   color:#87787d;
   flex: 1;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+li {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.item-name {
+  font-weight: bold;
+}
+
+.item-price {
+  color: #888;
+}
+
+.item-description {
+  color: #555;
+}
+.item-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
