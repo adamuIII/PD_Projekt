@@ -12,4 +12,10 @@ def regulamin(request):
 def pomoc(request):
     return render(request, 'gameshop/pomoc.html')
 
+def login(request):
+    return render(request, 'gameshop/login.html')
+
+def register(request):
+    return render(request, 'gameshop/register.html')
+
 
