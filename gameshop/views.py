@@ -6,4 +6,7 @@ def index(request):
 def products(request):
     return render(request, 'gameshop/products.html')
 
+def regulamin(request):
+    return render(request, 'gameshop/regulamin.html')
+
 
