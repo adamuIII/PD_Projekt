@@ -25,7 +25,18 @@
     </nav>
     <div class="wrapper">
       <div class="content">
+
         Zawartość strony
+                <div class="content">
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{form.username.label}}
+                {{ form.username}}
+                <br>
+                {{form.password.label}}
+                {{ form.password}}
+                <input type="submit" value="Submit">
+            </form>
       </div>
     </div>
   </div>
