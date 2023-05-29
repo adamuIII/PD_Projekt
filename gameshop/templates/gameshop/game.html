@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'gameshop/style.css' %}">
+  <title>Sklep</title>
+</head>
+<body>
+  <div class="cover">
+    <nav>
+      <img src="{% static 'gameshop/logo.jpg' %}" class="logo"alt="">
+      <ul>
+        <li><a href="{% url 'gameshop:index' %}">Strona główna</a></li>
+        <li><a href="/products">Produkty</a></li>
+        <li><a href="{% url 'gameshop:regulamin' %}">Regulamin</a></li>
+        <li><a href="{% url 'gameshop:pomoc' %}">Pomoc</a></li>
+      </ul>
+      <div>
+        <a href="{% url 'gameshop:login' %}" class="btn">Login</a>
+        <a href="{% url 'gameshop:register' %}"class="btn">Rejestracja</a>
+      </div>
+    </nav> 
+    <div class="wrapper">
+      <div class="content">
+          <img class="item-image" src="{{ game.image.url }}" alt="{{ game.name }}">
+          <div class="item-name">{{game.title}}</div>
+          <div class="item-price">{{game.price}}</div>
+          <div class="item-description">{{game.description}}</div>
+          <a href="#" class="btn">Kup Teraz</a>
+      </div>
+    </div>
+  </div>
+  </div>
+  
+</body>
+</html>
