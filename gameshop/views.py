@@ -1,7 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Game
-from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate
+from .forms import CreateUserForm, LoginForm
+from django.contrib import messages
 
 
 def index(request):
@@ -22,7 +24,8 @@ def pomoc(request):
 
 
 def login(request):
-    return render(request, 'gameshop/authenticate/login.html')
+    my_form = LoginForm()
+    return render(request, 'gameshop/authenticate/login.html', {'my_form': my_form})
 
 
 def register(request):
@@ -31,6 +34,7 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect("gameshop:login")
     context = {'form': form}
     return render(request, 'gameshop/authenticate/register.html', context)
 
