@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Game
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, authenticate
-from .forms import CreateUserForm, LoginForm
+from django.contrib.auth import login, authenticate, logout
+from .forms import CreateUserForm, UserLoginForm
 from django.contrib import messages
 
 
@@ -23,11 +23,6 @@ def pomoc(request):
     return render(request, 'gameshop/pomoc.html')
 
 
-def login(request):
-    my_form = LoginForm()
-    return render(request, 'gameshop/authenticate/login.html', {'my_form': my_form})
-
-
 def register(request):
     form = CreateUserForm
     if request.method == "POST":
@@ -42,3 +37,23 @@ def register(request):
 def game(request, slug):
     game = get_object_or_404(Game, slug=slug)
     return render(request, 'gameshop/game.html', {'game': game})
+
+def login(request):
+    if request.method == 'POST':
+        form = UserLoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('gameshop:index')
+            else:
+                form.add_error(None, 'Nieprawidłowe dane logowania.')
+    else:
+        form = UserLoginForm()
+    return render(request, 'gameshop/authenticate/login.html', {'form': form})
+
+def user_logout(request):
+    logout(request)
+    return redirect('gameshop:index')

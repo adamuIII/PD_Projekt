@@ -10,6 +10,6 @@ class CreateUserForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
 
-class LoginForm(forms.Form):
-    username = forms.CharField(max_length=255)
-    password = forms.CharField(widget=forms.PasswordInput)
+class UserLoginForm(forms.Form):
+    username = forms.CharField(label='Nazwa użytkownika')
+    password = forms.CharField(label='Hasło', widget=forms.PasswordInput)

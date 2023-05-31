@@ -30,12 +30,10 @@
 
         Zawartość strony
             <h2>Logowanie</h2>
-            <form method="post">
-                  <label for="email">email:</label>
-                    <input type="text" id="email" name="email"><br><br>
-                    <label for="password">password:</label>
-                    <input type="text" id="password" name="password"><br><br>
-                    <input type="submit" value="Submit">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Zaloguj</button>
             </form>
       </div>
     </div>
