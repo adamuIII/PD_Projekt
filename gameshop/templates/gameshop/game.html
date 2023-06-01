@@ -19,8 +19,13 @@
         <li><a href="{% url 'gameshop:pomoc' %}">Pomoc</a></li>
       </ul>
       <div>
-        <a href="{% url 'gameshop:login' %}" class="btn">Login</a>
-        <a href="{% url 'gameshop:register' %}"class="btn">Rejestracja</a>
+        {% if user.is_authenticated %}
+          <span class="welcome">Cześć, {{ user.username }}</span>
+          <a href="{% url 'gameshop:logout' %}" class="btn">Wyloguj</a>
+        {% else %}
+          <a href="{% url 'gameshop:login' %}" class="btn">Login</a>
+          <a href="{% url 'gameshop:register' %}" class="btn">Rejestracja</a>
+        {% endif %}
       </div>
     </nav> 
     <div class="wrapper">
