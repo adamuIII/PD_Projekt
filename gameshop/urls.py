@@ -9,7 +9,8 @@ urlpatterns = [
     path('products/', views.products, name='products'),
     path('regulamin/', views.regulamin, name='regulamin'),
     path('pomoc/', views.pomoc, name='pomoc'),
-    path('login/', views.login, name='login'),
+    path('login/', views.userlogin, name='login'),
     path('register/', views.register, name='register'),
     path('game/<slug:slug>/',views.game, name='game'),
+    path('logout/', views.userlogout, name='logout')
 ]

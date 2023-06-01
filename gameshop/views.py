@@ -29,6 +29,8 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'konto założone dla ' + user)
             return redirect("gameshop:login")
     context = {'form': form}
     return render(request, 'gameshop/authenticate/register.html', context)
@@ -38,22 +40,24 @@ def game(request, slug):
     game = get_object_or_404(Game, slug=slug)
     return render(request, 'gameshop/game.html', {'game': game})
 
-def login(request):
+
+def userlogin(request):
     if request.method == 'POST':
         form = UserLoginForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             password = form.cleaned_data['password']
-            user = authenticate(username=username, password=password)
+            user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
                 return redirect('gameshop:index')
             else:
-                form.add_error(None, 'Nieprawidłowe dane logowania.')
+                messages.info(request, 'Login lub hasło błędne')
     else:
         form = UserLoginForm()
     return render(request, 'gameshop/authenticate/login.html', {'form': form})
 
-def user_logout(request):
+
+def userlogout(request):
     logout(request)
     return redirect('gameshop:index')
