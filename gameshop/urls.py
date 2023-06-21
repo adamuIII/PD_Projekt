@@ -12,5 +12,6 @@ urlpatterns = [
     path('login/', views.userlogin, name='login'),
     path('register/', views.register, name='register'),
     path('game/<slug:slug>/',views.game, name='game'),
-    path('logout/', views.userlogout, name='logout')
+    path('logout/', views.userlogout, name='logout'),
+    path('otpa/', views.otpa, name='otpa')
 ]

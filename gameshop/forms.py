@@ -13,3 +13,6 @@ class CreateUserForm(UserCreationForm):
 class UserLoginForm(forms.Form):
     username = forms.CharField(label='Nazwa użytkownika')
     password = forms.CharField(label='Hasło', widget=forms.PasswordInput)
+
+class OTPVerificationForm(forms.Form):
+    otp_code = forms.CharField(label='Kod weryfikacyjny', max_length=6)
