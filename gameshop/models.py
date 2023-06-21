@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Category(models.Model):
     category = models.CharField(max_length=256, unique=True, db_index=True, verbose_name='Kategoria', blank=False) #nazwa kategorii, do ktorej bedzie nalezala gra
@@ -35,6 +36,9 @@ class Game(models.Model):
     class Meta:
         verbose_name_plural = 'Gry' #nazwa wyswietlana u admina
     
+    def url_get(self):
+        return reverse('gameshop:game', args=[self.slug])
+
     def __str__(self):
         return self.title
     
