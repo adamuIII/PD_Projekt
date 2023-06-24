@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('gameshop.urls',namespace='gameshop')),
+    path('api-auth/', include('rest_framework.urls')),
 ]
 
 if settings.DEBUG:

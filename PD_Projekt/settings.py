@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-
+    'rest_framework',
     'django_otp',
     'django_otp.plugins.otp_totp',
     'django_otp.plugins.otp_hotp',
