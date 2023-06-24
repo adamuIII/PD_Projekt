@@ -1,3 +1,8 @@
+# Aby uruchomić LiveTesty Selenium w Chrome należy:
+dodać w sytemowych PATH ścieżke do chromedriver.exe - można to zrobić za pomocą CMD: setx PATH "%PATH%;waszaSciezkaDoPlikuExe"
+np. setx PATH "%PATH%;C:\Users\Kowalski\Desktop\PD_Projekt\chromedriver.exe"
+a następnie za pomocą komendy w terminalu: "python manage.py test" - rozpoczyna się proces testowania (Należy mieć odpalony projekt przed wystartowaniem testów)
+
 # do kazdego pieknego pana ktory bedzie cos robil przy tym projekcie
 
 musicie sobie najpierw zrobic komende python manage.py makemigrations gameshop, a potem python manage.py migrate zanim baza zacznie dzialac
