@@ -67,7 +67,7 @@ def userlogin(request):
                 subject = 'Kod weryfikacyjny OTP'
                 message = f'Twój kod weryfikacyjny OTP to: {otp_code}'
                 from_email = 'noreply@semycolon.com'
-                recipient_list = ['adamrzepka484@gmail.com']
+                recipient_list = [user.email]
                 send_mail(subject, message, from_email, recipient_list, fail_silently=False)
 
                 request.session['otp_code'] = otp_code
