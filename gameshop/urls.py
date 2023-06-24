@@ -1,6 +1,9 @@
 from django.urls import path
 
 from . import views
+from .views import (
+    GameshopApiGeneralView
+)
 
 app_name = 'gameshop'
 
@@ -13,5 +16,6 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('game/<slug:slug>/',views.game, name='game'),
     path('logout/', views.userlogout, name='logout'),
-    path('otpa/', views.otpa, name='otpa')
+    path('otpa/', views.otpa, name='otpa'),
+    path('api', GameshopApiGeneralView.as_view())
 ]

@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Game
+from .models import Game, Developer, Category
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from .forms import CreateUserForm, UserLoginForm, OTPVerificationForm
@@ -8,6 +8,11 @@ from django_otp.decorators import otp_required
 from django_otp.forms import OTPAuthenticationForm
 from django.utils.crypto import get_random_string
 from django.core.mail import send_mail
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework import permissions
+from .serializers import CategorySerializer, DeveloperSerializer, GameSerializer
 
 def generate_otp_code():
     return get_random_string(length=6)
@@ -99,3 +104,14 @@ def otpa(request):
         form = OTPVerificationForm()
 
     return render(request, 'gameshop/authenticate/otpa.html', {'form': form})
+
+class GameshopApiGeneralView(APIView):
+    # koniecznosc zalogowania na superusera przed korzystaniem z api - wystarczy zalogowac sie na /admin
+    permission_classes = [permissions.IsAdminUser]
+
+    # 1. wypisz wszystkie gry
+    def get(self, request, *args, **kwargs):
+        games = Game.objects.all()
+        serializer = GameSerializer(games, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
