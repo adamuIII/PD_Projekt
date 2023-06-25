@@ -52,3 +52,39 @@ class RegisterFormTest(LiveServerTestCase):
         user_email.send_keys('testselenium@onet.pl')
         time.sleep(3)
         submit.send_keys(Keys.RETURN)
+
+class Regulamintest(LiveServerTestCase):
+
+    def testregulamin(self):
+        driver = webdriver.Chrome()
+
+        driver.get('http://127.0.0.1:8000/regulamin/')
+        time.sleep(3)
+        assert "Regulamin sklepu" in driver.title
+
+class Productstest(LiveServerTestCase):
+
+    def testproducts(self):
+        driver = webdriver.Chrome()
+
+        driver.get('http://127.0.0.1:8000/products/')
+        time.sleep(3)
+        assert "Produkty" in driver.title
+
+class Pomoctest(LiveServerTestCase):
+
+    def testpomoc(self):
+        driver = webdriver.Chrome()
+
+        driver.get('http://127.0.0.1:8000/pomoc/')
+        time.sleep(3)
+        assert "Pomoc" in driver.title
+
+class Gametest(LiveServerTestCase):
+
+    def testgame(self):
+        driver = webdriver.Chrome()
+
+        driver.get('http://127.0.0.1:8000/game/the-witcher-3-wild-hunt/')
+        time.sleep(3)
+        assert "Gry" in driver.title
