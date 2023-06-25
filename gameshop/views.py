@@ -14,6 +14,10 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
 from .serializers import CategorySerializer, DeveloperSerializer, GameSerializer
+from django.contrib.auth import get_user_model
+from django.contrib.auth.hashers import make_password
+
+User = get_user_model()
 
 def generate_otp_code():
     return get_random_string(length=6)
@@ -36,18 +40,59 @@ def pomoc(request):
 
 
 def register(request):
-    form = CreateUserForm
+    form = CreateUserForm()
     if request.method == "POST":
         form = CreateUserForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            user.set_unusable_password()
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'konto założone dla ' + user)
-            return redirect("gameshop:login")
+            password = form.cleaned_data['password1']
+            user.set_password(password)
+            user.save()  # Zapisz użytkownika, aby otrzymać ID
+
+            # Dodaj kod OTP i zapisz go w sesji
+            otp_code = generate_otp_code()
+            subject = 'Kod weryfikacyjny OTP'
+            message = f'Twój kod weryfikacyjny OTP to: {otp_code}'
+            from_email = 'noreply@semycolon.com'
+            recipient_list = [form.cleaned_data['email']]
+            send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+
+            request.session['otp_code'] = otp_code
+            request.session['new_user_id'] = user.id  # Zapisz ID nowo utworzonego użytkownika
+
+            return redirect("gameshop:otpaRegister")
     context = {'form': form}
     return render(request, 'gameshop/authenticate/register.html', context)
+
+
+def otpaRegister(request):
+    if request.method == 'POST':
+        form = OTPVerificationForm(request.POST)
+        if form.is_valid():
+            otp_code = form.cleaned_data['otp_code']
+            stored_otp_code = request.session.get('otp_code')
+            if otp_code == stored_otp_code:
+                # Kod OTP jest poprawny
+                del request.session['otp_code']  # Usuń kod OTP z sesji po weryfikacji
+
+                user_id = request.session.get('new_user_id')
+                if user_id:
+                    user = User.objects.get(id=user_id)
+                    user.email_verified = True
+                    user.save()
+
+                    messages.success(request, 'Konto zostało założone pomyślnie. Możesz się teraz zalogować.')
+                    return redirect('gameshop:login')
+                else:
+                    messages.error(request, 'Wystąpił błąd podczas rejestracji. Spróbuj ponownie.')
+            else:
+                # Kod OTP jest niepoprawny
+                messages.error(request, 'Podany kod OTP jest niepoprawny.')
+    else:
+        form = OTPVerificationForm()
+
+    return render(request, 'gameshop/authenticate/otpaRegister.html', {'form': form})
+
 
 
 def game(request, slug):
@@ -72,7 +117,7 @@ def userlogin(request):
 
                 request.session['otp_code'] = otp_code
 
-                return redirect('gameshop:otpa')
+                return redirect('gameshop:otpaLogin')
             else:
                 messages.info(request, 'Login lub hasło błędne')
     else:
@@ -84,7 +129,7 @@ def userlogout(request):
     logout(request)
     return redirect('gameshop:index')
 
-def otpa(request):
+def otpaLogin(request):
     if request.method == 'POST':
         form = OTPVerificationForm(request.POST)
         if form.is_valid():
@@ -104,7 +149,7 @@ def otpa(request):
     else:
         form = OTPVerificationForm()
 
-    return render(request, 'gameshop/authenticate/otpa.html', {'form': form})
+    return render(request, 'gameshop/authenticate/otpaLogin.html', {'form': form})
 
 class GameshopApiCheck(APIView):
     # permisje - tu kazdy moze sprawdzic
