@@ -88,3 +88,27 @@ class Gametest(LiveServerTestCase):
         driver.get('http://127.0.0.1:8000/game/the-witcher-3-wild-hunt/')
         time.sleep(3)
         assert "Gry" in driver.title
+
+class AdminPagetest(LiveServerTestCase):
+    def test_if_admin_panel_is_displayed(self):
+        driver = webdriver.Chrome()
+
+        driver.get('http://127.0.0.1:8000/admin/')
+        time.sleep(3)
+        # header = driver.find_element(By.ID,'site-name').text
+        # driver.assertEqual('Django administration', header)
+        assert "Log in | Django site admin" in driver.title
+
+    def test_login_admin_page(self):
+        driver = webdriver.Chrome()
+
+        driver.get('http://127.0.0.1:8000/admin/')
+        time.sleep(3)
+        user_name = driver.find_element(By.ID, 'id_username')
+        user_password = driver.find_element(By.ID, 'id_password')
+        submit = driver.find_element(By.XPATH, '//input[@type="submit"]')
+
+        user_name.send_keys('admin1')
+        user_password.send_keys('admin')
+        # time.sleep(3)
+        submit.send_keys(Keys.RETURN)
