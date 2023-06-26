@@ -16,29 +16,31 @@ from rest_framework import permissions
 from .serializers import CategorySerializer, DeveloperSerializer, GameSerializer
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
+from django.views.decorators.csrf import csrf_protect
 
 User = get_user_model()
 
 def generate_otp_code():
     return get_random_string(length=6)
 
+@csrf_protect
 def index(request):
     return render(request, "gameshop/index.html")
 
-
+@csrf_protect
 def products(request):
     products = Game.objects.all()
     return render(request, 'gameshop/products.html', {'products': products})
 
-
+@csrf_protect
 def regulamin(request):
     return render(request, 'gameshop/regulamin.html')
 
-
+@csrf_protect
 def pomoc(request):
     return render(request, 'gameshop/pomoc.html')
 
-
+@csrf_protect
 def register(request):
     form = CreateUserForm()
     if request.method == "POST":
@@ -64,7 +66,7 @@ def register(request):
     context = {'form': form}
     return render(request, 'gameshop/authenticate/register.html', context)
 
-
+@csrf_protect
 def otpaRegister(request):
     if request.method == 'POST':
         form = OTPVerificationForm(request.POST)
@@ -94,11 +96,12 @@ def otpaRegister(request):
     return render(request, 'gameshop/authenticate/otpaRegister.html', {'form': form})
 
 
-
+@csrf_protect
 def game(request, slug):
     game = get_object_or_404(Game, slug=slug)
     return render(request, 'gameshop/game.html', {'game': game})
 
+@csrf_protect
 def userlogin(request):
     if request.method == 'POST':
         form = UserLoginForm(request.POST)
@@ -124,11 +127,12 @@ def userlogin(request):
         form = UserLoginForm()
     return render(request, 'gameshop/authenticate/login.html', {'form': form})
 
-
+@csrf_protect
 def userlogout(request):
     logout(request)
     return redirect('gameshop:index')
 
+@csrf_protect
 def otpaLogin(request):
     if request.method == 'POST':
         form = OTPVerificationForm(request.POST)
