@@ -41,11 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
-
+    'rest_framework',
+    'rest_framework_simplejwt',
     'django_otp',
     'django_otp.plugins.otp_totp',
     'django_otp.plugins.otp_hotp',
     'django_otp.plugins.otp_static',
+    'rest_framework_swagger',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +148,11 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'gameshop32167@gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_PASSWORD = 'npnejkdtyxhavosm'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
+    ]
+}
