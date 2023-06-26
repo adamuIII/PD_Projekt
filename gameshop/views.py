@@ -16,7 +16,6 @@ from rest_framework import permissions
 from .serializers import CategorySerializer, DeveloperSerializer, GameSerializer
 from django.contrib.auth import get_user_model
 from django.contrib.auth.hashers import make_password
-from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_http_methods, require_GET, require_POST
 
 User = get_user_model()
@@ -129,7 +128,7 @@ def userlogin(request):
         form = UserLoginForm()
     return render(request, 'gameshop/authenticate/login.html', {'form': form})
 
-@require_http_methods(["GET", "POST"])
+@require_GET
 def userlogout(request):
     logout(request)
     return redirect('gameshop:index')

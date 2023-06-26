@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand, CommandError, CommandParser
 from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
-'''TODO BO NIE DZIAŁA XD'''
+'''TODO DALEJ NIE DZIALA XD'''
 class Command(BaseCommand):
     help = "Generates pair of JWT keys for user manually"
 
