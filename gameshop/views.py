@@ -128,7 +128,7 @@ def userlogin(request):
         form = UserLoginForm()
     return render(request, 'gameshop/authenticate/login.html', {'form': form})
 
-@require_http_methods(["GET", "POST"])
+@require_GET
 def userlogout(request):
     logout(request)
     return redirect('gameshop:index')
