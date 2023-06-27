@@ -105,7 +105,8 @@ def game(request, slug):
 @require_GET
 def buy(request, slug):
     game = get_object_or_404(Game, slug=slug)
-    return render(request, 'gameshop/buy.html', {'game': game})
+    code = get_random_string(length=16)
+    return render(request, 'gameshop/buy.html', {'game': game, 'code': code})
 
 @require_http_methods(["GET", "POST"])
 def userlogin(request):
