@@ -1,51 +1,24 @@
+{% extends 'gameshop/base.html' %}
 {% load crispy_forms_filters %}
 {% load static %}
 {% load crispy_forms_tags %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'gameshop/style.css' %}">
-  <title>Sklep</title>
-</head>
-<body>
-  <div class="cover">
-    <nav>
-      <img src="{% static 'gameshop/logo.jpg' %}" class="logo" alt="">
-      <ul>
-        <li><a href="{% url 'gameshop:index' %}">Strona główna</a></li>
-        <li><a href="/products">Produkty</a></li>
-        <li><a href="{% url 'gameshop:regulamin' %}">Regulamin</a></li>
-        <li><a href="{% url 'gameshop:pomoc' %}">Pomoc</a></li>
-      </ul>
-      <div>
-        {% if user.is_authenticated %}
-          <span class="welcome">Cześć, {{ user.username }}</span>
-          <a href="{% url 'gameshop:logout' %}" class="btn">Wyloguj</a>
-        {% else %}
-          <a href="{% url 'gameshop:login' %}" class="btn">Login</a>
-          <a href="{% url 'gameshop:register' %}" class="btn">Rejestracja</a>
-        {% endif %}
-      </div>
-    </nav>
-    <div class="wrapper">
-      <div class="content">
 
-        Zawartość strony
-            <h2>Logowanie</h2>
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit" id="submit">Zaloguj</button>
-            </form>
-      </div>
-        {% for message in messages %}
-            <p id="messages">{{ message }}</p>
-        {% endfor %}
+
+{%block title%} Logowanie {%endblock%}
+
+{%block content%}
+  <div class="wrapper">
+    <div class="content">
+
+          <h2>Logowanie</h2>
+          <form method="POST">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" id="submit">Zaloguj</button>
+          </form>
     </div>
+      {% for message in messages %}
+          <p id="messages">{{ message }}</p>
+      {% endfor %}
   </div>
-
-</body>
-</html>
+{%endblock%}
