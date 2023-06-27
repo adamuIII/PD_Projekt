@@ -23,6 +23,7 @@ urlpatterns = [
     path('register/', views.register, name='register'),
     path('otpaRegister/', views.otpaRegister, name='otpaRegister'),
     path('game/<slug:slug>/',views.game, name='game'),
+    path('game/<slug:slug>/buy',views.buy, name='buy'),
     path('logout/', views.userlogout, name='logout'),
     path('otpaLogin/', views.otpaLogin, name='otpaLogin'),
     path('api/', GameshopApiCheck.as_view()),

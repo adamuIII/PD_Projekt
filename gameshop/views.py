@@ -102,6 +102,10 @@ def game(request, slug):
     game = get_object_or_404(Game, slug=slug)
     return render(request, 'gameshop/game.html', {'game': game})
 
+def buy(request, slug):
+    game = get_object_or_404(Game, slug=slug)
+    return render(request, 'gameshop/buy.html', {'game': game})
+
 @require_http_methods(["GET", "POST"])
 def userlogin(request):
     if request.method == 'POST':
@@ -113,6 +117,7 @@ def userlogin(request):
             if user is not None:
                 login(request, user)
                 otp_code = generate_otp_code()
+                print(otp_code)
                 subject = 'Kod weryfikacyjny OTP'
                 message = f'Twój kod weryfikacyjny OTP to: {otp_code}'
                 from_email = 'noreply@semycolon.com'
