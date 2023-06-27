@@ -8,8 +8,13 @@
   <div class="wrapper">
     <div class="content">
       <h1>Buy some games!</h1>
+      {% if user.is_authenticated %}
+      <p> Cześć {{user.username}}! Może chciałbyś zagrać w coś nowego? :) </p>
+      <a href="{% url 'gameshop:products' %}" class="btn">Sprawdź naszą ofertę!</a>
+      {% else %}
       <p>Chcesz zagrać w nowe tytuły? Potrzebujesz nowych gier? Gamershop zapewi ci ich wiele! Zarejestruj się już dziś. Darmowa wysyłka dla nowych użytkowników.</p>
-      <a href="#"class="btn">Dołącz teraz</a>
+      <a href="{% url 'gameshop:register' %}" class="btn">Dołącz teraz</a>
+      {% endif %}
     </div>
   </div>
 {%endblock%}
