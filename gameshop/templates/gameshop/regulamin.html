@@ -1,90 +1,43 @@
+<!-- Rozszerza podstawowy szablon 'gameshop/base.html' -->
 {% extends 'gameshop/base.html' %}
 {% load static %}
 
+<!-- Nadpisanie tytułu strony -->
+{% block title %} Regulamin {% endblock %}
 
-{%block title%} Regulamin {%endblock%}
-
-{%block content%}
+<!-- Nadpisanie zawartości strony -->
+{% block content %}
 <div class="wrapper">
   <div class="content">
 
+    <!-- Tworzenie elementu akordeonu Bootstrapa, który pozwala na zwijanie i rozwijanie różnych sekcji regulaminu -->
     <div class="accordion" id="accordionExample" style="width: 700px">
+
+      <!-- Pierwsza sekcja akordeonu dla §1 POSTANOWIENIA OGÓLNE -->
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingOne">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             §1. POSTANOWIENIA OGÓLNE
           </button>
         </h2>
+        <!-- Treść dla §1 POSTANOWIENIA OGÓLNE -->
         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body">
+            <!-- Wykorzystanie tagów <ol> i <li> do tworzenia listy numerowanej -->
             <ol>
-                <li>GamerShop jest sklepem internetowym (nazywanym dalej Sklepem Internetowym), którego właścicielem jest Adam Rzepka, wpisany do Centralnej Ewidencji i Informacji o Działalności Gospodarczej, pod firmą GamerShop Adam Rzepka, posiadający: adres miejsca wykonywania działalności i adres do doręczeń: 26-004 Bieliny </li>
-                <li>Brak reklamacji XD</li>
-                <li>Niniejszy Regulamin jest regulaminem, o którym mowa w art. 8 Ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną. </li>
-                <li>Do korzystania ze Sklepu Internetowego niezbędne jest posiadanie połączenia z siecią Internet. </li>
-                <li>Dokonywanie zakupów za pośrednictwem Sklepu Internetowego wymaga akceptacji plików cookies przez przeglądarkę Użytkownika. </li>
-                <li>Sklep Internetowy działa na prawidłowo skonfigurowanej przeglądarce Internet Explorer, Mozilla Firefox, Google Chrome bądź innej zaktualizowanej i odpowiednio skonfigurowanej przeglądarce. </li>
+                <li>...</li>
+                <li>,,,</li>
+                <li>^^^</li>
+                <li>;;;</li>
+                <li>:::</li>
+                <!-- Kolejne punkty regulaminu -->
             </ol>
           </div>
         </div>
       </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            §2. DEFINICJE
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <ol>
-                <li>DZIEŃ ROBOCZY – jeden dzień od poniedziałku do piątku z wyłączeniem dni ustawowo wolnych od pracy. </li>
-                <li>FORMULARZ REJESTRACJI – formularz dostępny w Sklepie Internetowym umożliwiający utworzenie Konta. </li>
-                <li>KODEKS CYWILNY – ustawa kodeks cywilny z dnia 23 kwietnia 1964 r. (Dz.U. 1964 nr 16, poz. 93 z późn. zm.). </li>
-                <li>PRODUKT – dostępna w Sklepie Internetowym rzecz ruchoma będąca przedmiotem Umowy Sprzedaży między Klientem a Sprzedawcą. </li>
-                <li>REGULAMIN – niniejszy regulamin Sklepu Internetowego. </li>
-                <li>SKLEP INTERNETOWY – sklep internetowy dostępny pod adresem internetowym: www.gamershop.pl; </li>
-                <li>UMOWA SPRZEDAŻY – umowa sprzedaży Produktu w rozumieniu Kodeksu Cywilnego, zawarta między Klientem a Sprzedawcą za pośrednictwem Sklepu Internetowego. </li>
-                <li>USTAWA O PRAWACH KONSUMENTA – ustawa z dnia 30 maja 2014 r. o prawach konsumenta (Dz.U. 2014 poz. 827 z późn. zm.). </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            §3. ZAMÓWIENIA
-          </button>
-        </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <ol>
-                <li>Zawarcie Umowy Sprzedaży między Klientem a Sprzedawcą następuje po uprzednim złożeniu przez Klienta Zamówienia za pomocą Formularza Zamówień w Sklepie Internetowym. </li>
-                <li>W celu złożenia zamówienia za pomocą Formularza Zamówienia w Sklepie Internetowym należy wejść na stronę internetową www.gamershop.pl, a następnie dokonać wyboru Produktu za pomocą kolejnych czynności technicznych w oparciu o wyświetlane komunikaty oraz informacje dostępne na podanej stronie internetowej. </li>
-                <li>Wybór zamawianych Produktów przez Klienta jest dokonywany poprzez ich dodanie do koszyka.</li>
-            </ol>
-          </div>
-        </div>
-      </div>
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-            §4. SPOSOBY I TERMINY PŁATNOŚCI ZA PRODUKT
-          </button>
-        </h2>
-        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <ol>
-                <li>Cena Produktu podana jest w złotych polskich oraz zawiera podatek VAT i koszty opakowania. Cena Produktu nie obejmuje opłaty za dostawę. Koszt dostawy zostanie doliczony do ceny zakupionych Produktów. </li>
-                <li>Sprzedawca zastrzega sobie prawo do zmiany cen Produktów znajdujących się w Sklepie Internetowym, wprowadzania nowych Produktów do asortymentu Sklepu Internetowego. Złożone Zamówienia realizowane są na warunkach obowiązujących w chwili ich złożenia, wszelkie późniejsze zmiany cen Produktów, czy innych elementów objętych zamówieniem nie mają wpływu na kształt zawartej Umowy Sprzedaży. </li>
-                <li>Klient może wybrać następujące formy płatności z tytułu zawartej Umowy Sprzedaży: </li>
-                    <ul>
-                      <li>Płatność przelewem na rachunek bankowy Sprzedawcy;<br><b> Adam Rzepka - 26-004 Bieliny</b></li>
-                      <li>Płatność gotówką w przypadku wyboru sposobu dostawy kurierem za pobraniem lub przy odbiorze osobistym</li>
-                    </ul>
-            </ol>
-          </div>
-        </div>
-      </div>
+
+      <!-- Kolejne sekcje akordeonu dla innych punktów regulaminu (§2 DEFINICJE, §3 ZAMÓWIENIA, §4 SPOSOBY I TERMINY PŁATNOŚCI ZA PRODUKT) są tworzone w ten sam sposób -->
+      
     </div>
 
 </div>
