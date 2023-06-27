@@ -23,24 +23,24 @@ User = get_user_model()
 def generate_otp_code():
     return get_random_string(length=6)
 
-
+# Widok strony głównej
 @require_GET
 def index(request):
     return render(request, "gameshop/index.html")
-
+# Widok listy produktów
 @require_GET
 def products(request):
     products = Game.objects.all()
     return render(request, 'gameshop/products.html', {'products': products})
-
+# Widok regulaminu
 @require_GET
 def regulamin(request):
     return render(request, 'gameshop/regulamin.html')
-
+# Widok pomocy
 @require_GET
 def pomoc(request):
     return render(request, 'gameshop/pomoc.html')
-
+# Widok rejestracji użytkownika
 @require_http_methods(["GET", "POST"])
 def register(request):
     form = CreateUserForm()
@@ -66,7 +66,7 @@ def register(request):
             return redirect("gameshop:otpaRegister")
     context = {'form': form}
     return render(request, 'gameshop/authenticate/register.html', context)
-
+# Widok weryfikacji kodu OTP podczas rejestracji
 @require_http_methods(["GET", "POST"])
 def otpaRegister(request):
     if request.method == 'POST':
@@ -96,18 +96,18 @@ def otpaRegister(request):
 
     return render(request, 'gameshop/authenticate/otpaRegister.html', {'form': form})
 
-
+# Widok gry
 @require_GET
 def game(request, slug):
     game = get_object_or_404(Game, slug=slug)
     return render(request, 'gameshop/game.html', {'game': game})
-
+# Widok zakupu
 @require_GET
 def buy(request, slug):
     game = get_object_or_404(Game, slug=slug)
     code = get_random_string(length=16)
     return render(request, 'gameshop/buy.html', {'game': game, 'code': code})
-
+# Widok logowania użytkownika
 @require_http_methods(["GET", "POST"])
 def userlogin(request):
     if request.method == 'POST':
@@ -139,7 +139,7 @@ def userlogin(request):
 def userlogout(request):
     logout(request)
     return redirect('gameshop:index')
-
+# Widok wylogowania użytkownika
 @require_http_methods(["GET", "POST"])
 def otpaLogin(request):
     if request.method == 'POST':

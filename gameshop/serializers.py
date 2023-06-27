@@ -5,14 +5,15 @@ from rest_framework import serializers
 class DeveloperSerializer(serializers.ModelSerializer):
     class Meta:
         model = Developer
-        fields = ["developer", "slug"]
+        fields = ["developer", "slug"] # Pola serializera dla modelu Developer: developer, slug
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ["category", "slug"]
+        fields = ["category", "slug"] # Pola serializera dla modelu Category: category, slug
 
 class GameSerializer(serializers.ModelSerializer):
     class Meta:
         model = Game
+        # Pola serializera dla modelu Game: category, developer, title, description, instock, price, release_date, creation_date, slug
         fields = ["category", "developer", "title", "description", "instock", "price", "release_date", "creation_date", "slug"]

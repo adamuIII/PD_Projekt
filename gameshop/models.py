@@ -10,18 +10,21 @@ class Category(models.Model):
     
     def __str__(self):
         return self.category
+    # Zwraca reprezentację tekstową obiektu, w tym przypadku nazwę kategorii
     
 class Developer(models.Model):
     developer = models.CharField(max_length=256, unique=True, db_index=True, verbose_name='Nazwa developera', blank=False)
     slug = models.SlugField(max_length=256, unique=True, blank=False)
+    # Nazwa developera, unikalna, używana jako identyfikator
+    # Slug to nazwa, która będzie wyświetlana w adresie URL strony, bez znaków specjalnych itp.
 
     class Meta:
         verbose_name_plural = 'Developerzy'
-
+        # Nazwa w liczbie mnogiej, wyświetlana w panelu administracyjnym
     def __str__(self):
         return self.developer
-
-class Game(models.Model):
+        # Zwraca reprezentację tekstową obiektu, w tym przypadku nazwę developera
+class Game(models.Model): # Powiązania i pola dla modelu Game
     category = models.ForeignKey(Category, related_name='cat', on_delete=models.CASCADE, verbose_name='Kategoria')
     developer = models.ForeignKey(Developer, related_name='dev', on_delete=models.CASCADE, verbose_name='Developer')
     title = models.CharField(max_length=256, verbose_name='Tytuł', blank=False)
@@ -38,10 +41,10 @@ class Game(models.Model):
     
     def url_get(self):
         return reverse('gameshop:game', args=[self.slug])
-
+        # Generuje URL do widoku 'game' z przekazanym argumentem 'slug'
     def __str__(self):
         return self.title
-    
+        # Zwraca reprezentację tekstową obiektu, w tym przypadku tytuł gry
 
 
 

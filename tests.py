@@ -8,6 +8,11 @@ import time
 class Hosttest(LiveServerTestCase):
 
     def testindex(self):
+        """
+        Testuje główną stronę (index) sklepu.
+        Otwiera przeglądarkę Chrome, przechodzi do adresu strony głównej,
+        oczekuje na załadowanie się strony, a następnie sprawdza, czy tytuł zawiera słowo "Sklep".
+        """
         driver = webdriver.Chrome()
 
         driver.get('http://127.0.0.1:8000/')
@@ -18,6 +23,12 @@ class Hosttest(LiveServerTestCase):
 class LoginFormTest(LiveServerTestCase):
 
     def testform(self):
+        """
+        Testuje formularz logowania.
+        Otwiera przeglądarkę Chrome, przechodzi do strony logowania,
+        oczekuje na załadowanie się strony, wprowadza nazwę użytkownika i hasło,
+        a następnie wysyła formularz.
+        """
         driver = webdriver.Chrome()
 
         driver.get('http://127.0.0.1:8000/login/')
@@ -36,6 +47,12 @@ class LoginFormTest(LiveServerTestCase):
 class RegisterFormTest(LiveServerTestCase):
 
     def testregisterform(self):
+        """
+        Testuje formularz rejestracji.
+        Otwiera przeglądarkę Chrome, przechodzi do strony rejestracji,
+        oczekuje na załadowanie się strony, wprowadza dane rejestracyjne,
+        a następnie wysyła formularz.
+        """
         driver = webdriver.Chrome()
 
         driver.get('http://127.0.0.1:8000/register/')
@@ -56,6 +73,11 @@ class RegisterFormTest(LiveServerTestCase):
 class Regulamintest(LiveServerTestCase):
 
     def testregulamin(self):
+        """
+        Testuje stronę regulaminu sklepu.
+        Otwiera przeglądarkę Chrome, przechodzi do strony regulaminu,
+        oczekuje na załadowanie się strony, a następnie sprawdza, czy tytuł zawiera słowo "Regulamin sklepu".
+        """
         driver = webdriver.Chrome()
 
         driver.get('http://127.0.0.1:8000/regulamin/')
@@ -65,6 +87,11 @@ class Regulamintest(LiveServerTestCase):
 class Productstest(LiveServerTestCase):
 
     def testproducts(self):
+        """
+        Testuje stronę z produktami.
+        Otwiera przeglądarkę Chrome, przechodzi do strony z produktami,
+        oczekuje na załadowanie się strony, a następnie sprawdza, czy tytuł zawiera słowo "Produkty".
+        """
         driver = webdriver.Chrome()
 
         driver.get('http://127.0.0.1:8000/products/')
@@ -74,7 +101,13 @@ class Productstest(LiveServerTestCase):
 class Pomoctest(LiveServerTestCase):
 
     def testpomoc(self):
+
         driver = webdriver.Chrome()
+        """
+        Testuje stronę pomocy.
+        Otwiera przeglądarkę Chrome, przechodzi do strony pomocy,
+        oczekuje na załadowanie się strony, a następnie sprawdza, czy tytuł zawiera słowo "Pomoc".
+        """
 
         driver.get('http://127.0.0.1:8000/pomoc/')
         time.sleep(3)
@@ -83,6 +116,11 @@ class Pomoctest(LiveServerTestCase):
 class Gametest(LiveServerTestCase):
 
     def testgame(self):
+        """
+        Testuje stronę gry.
+        Otwiera przeglądarkę Chrome, przechodzi do strony konkretnej gry,
+        oczekuje na załadowanie się strony, a następnie sprawdza, czy tytuł zawiera słowo "Gry".
+        """
         driver = webdriver.Chrome()
 
         driver.get('http://127.0.0.1:8000/game/the-witcher-3-wild-hunt/')
@@ -91,6 +129,11 @@ class Gametest(LiveServerTestCase):
 
 class AdminPagetest(LiveServerTestCase):
     def test_if_admin_panel_is_displayed(self):
+        """
+        Testuje wyświetlanie panelu administratora.
+        Otwiera przeglądarkę Chrome, przechodzi do panelu administratora,
+        oczekuje na załadowanie się strony, a następnie sprawdza, czy tytuł zawiera frazę "Log in | Django site admin".
+        """
         driver = webdriver.Chrome()
 
         driver.get('http://127.0.0.1:8000/admin/')
@@ -100,6 +143,12 @@ class AdminPagetest(LiveServerTestCase):
         assert "Log in | Django site admin" in driver.title
 
     def test_login_admin_page(self):
+        """
+        Testuje logowanie do panelu administratora.
+        Otwiera przeglądarkę Chrome, przechodzi do panelu administratora,
+        oczekuje na załadowanie się strony, wprowadza nazwę użytkownika i hasło,
+        a następnie wysyła formularz.
+        """
         driver = webdriver.Chrome()
 
         driver.get('http://127.0.0.1:8000/admin/')
