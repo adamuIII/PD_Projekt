@@ -102,6 +102,7 @@ def game(request, slug):
     game = get_object_or_404(Game, slug=slug)
     return render(request, 'gameshop/game.html', {'game': game})
 
+@require_GET
 def buy(request, slug):
     game = get_object_or_404(Game, slug=slug)
     return render(request, 'gameshop/buy.html', {'game': game})
